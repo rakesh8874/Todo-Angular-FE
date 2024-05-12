@@ -1,0 +1,89 @@
+:host.XSmall .todo-details-container{
+  width: 100%;
+  margin: auto;
+  padding: auto;
+}
+
+:host.XSmall .highPrDiv{
+  width: 95%;
+  margin:30px auto;
+  padding: auto;
+}
+
+:host.XSmall .card-footer{
+  margin: auto;
+  padding: auto;
+  width: 100%;
+}
+
+:host.small .todo-details-container{
+  width: 100%;
+  margin: auto;
+  padding: auto;
+}
+
+:host.small .highPrDiv{
+  width: 95%;
+  margin:30px auto;
+  padding: auto;
+}
+
+:host.small .card-footer{
+  margin: auto;
+  padding: auto;
+  width: 100%;
+}
+/* styling card which is showing details of todos */
+.highPrDiv{
+  width:600px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+  margin: auto;
+ }
+
+ .highPrDiv mat-card-content{
+  padding: 20px;
+ }
+
+ /* styling heading holding due date */
+ .due-h3{
+  color: white;
+  margin-left: 40px;
+  font-weight: 500;
+}
+
+/* styling heading holding title  */
+.todo-title-h3{
+    font-weight: 500;
+    color:white;
+}
+
+/* styling heading holding priority */
+.h4-priority{
+  color:rgb(117, 106, 106);
+}
+
+/* styling paragrap holding description */
+.todo-para{
+  font-weight: 500;
+  color:rgb(117, 106, 106);
+}
+mat-card-header{
+background: var(--dark-gray);
+}
+
+mat-card-footer{
+background:var(--dark-gray);
+}
+
+
+.card-footer{
+ display: flex;
+ width: 500px;
+ margin: auto;
+}
+
+.card-footer mat-icon{
+color: white;
+}

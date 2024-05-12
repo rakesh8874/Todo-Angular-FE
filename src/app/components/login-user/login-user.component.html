@@ -1,0 +1,37 @@
+<section>
+    <!-- card which is holding login form -->
+<mat-card class = "myCard">
+    <h1 class = "h1">LogIn!!</h1>
+ 
+    <!-- form for login -->
+      <form [formGroup] = "loginForm" (ngSubmit) = "onSubmit()">
+ 
+       <!-- field for email -->
+         <mat-form-field class = "formField">
+             <input type="email" formControlName = "email" name = "email" matInput placeholder="Your Email Id">
+             <mat-error *ngIf = "email?.errors?.['required']">
+               Please Provide Valid Email Id
+               </mat-error> 
+           </mat-form-field>
+ 
+           <!-- field for password -->
+            <mat-form-field class = "formField">
+             <input type="password" matInput formControlName = "password" name = "password" placeholder="Your Password">
+              <mat-error *ngIf = "password?.errors?.['required']">
+               Please Provide Valid Password
+               </mat-error> 
+           </mat-form-field>
+ 
+            <!-- login and reset button -->
+            <div class = "text-center">
+             <button mat-raised-button color = "primary" type="submit" [disabled]="!loginForm.valid">Login !!</button>
+             <button mat-raised-button color = "accent" class = "resetBtn" type="reset">Reset</button>
+            </div>
+      </form>
+      <!-- div for setting functionlity of forgot password -->
+      <div class="h3-div">
+      <h3><a (click)="openDialog('0ms', '0ms')">Forgot Password?</a></h3>
+     </div>
+    </mat-card>
+
+</section>

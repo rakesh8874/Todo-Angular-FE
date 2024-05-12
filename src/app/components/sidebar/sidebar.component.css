@@ -1,0 +1,130 @@
+/* responsiveness for xsmall devices */
+:host.XSmall .section{
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    left: -280px;
+    transition: 0.4s ease-in-out;
+}
+
+:host.XSmall .sidenav-card{
+    height: 578px;
+    width: 215px;
+}
+
+:host.XSmall .menu_icon{
+    display:block;
+    width: 50px;
+}
+
+:host.XSmall .menu_icon_class{
+    margin-left: 0;
+}
+
+:host.XSmall .menuClass{
+    left: 0;
+    transition: 0.4s ease-in-out;
+ }
+
+/* responsiveness for small devices */
+
+
+:host.small .section{
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    left: -280px;
+    transition: 0.4s ease-in-out;
+}
+
+:host.small .sidenav-card{
+    height: 578px;
+    width: 215px;
+}
+
+:host.small .menu_icon{
+    display:block;
+    width: 50px;
+}
+
+:host.small .menu_icon_class{
+    margin-left: 0;
+}
+
+:host.small .menuClass{
+    left: 0;
+    transition: 0.4s ease-in-out;
+ }
+
+ 
+/* styling card which is having sidenav */
+
+.sidenav-card{
+    height: 656px;
+    background: var(--gray-light);
+    box-shadow: 2px 0 rgb(143, 135, 135);
+}
+
+.menu_icon_class{
+    display: none;
+}
+
+
+/*styling inbox div */
+ .menu-div h2{
+    margin-left: 20px;
+    margin-top: 30px;
+ }
+
+ .menu_icon{
+    display: none;
+    background:var(--gray-light);
+    padding: 10px;
+    box-shadow: 2px 2px rgb(143, 135, 135);
+    cursor: pointer;
+ }
+
+  
+
+.menu_icon span{
+    width: 32px;
+    height: 3px;
+    display: block;
+    background: black;
+    transition: 0.2s ease-in-out;
+    margin-top: 3px;
+ }
+
+
+.btn-adjust-menu{
+    margin-left: 30px;
+}
+
+/*setting hover on button*/
+ .btn-adjust:hover{
+    background: gray;
+}
+
+/* adjusitng icon */
+.icon-adjust{
+    width: 50px;
+    font-size: 25px;
+}
+/* setting hover functionality to li */
+.category-div ul li:hover{
+    cursor: pointer;
+    background: gray;
+}
+
+.inbox{
+    margin-right: 10px;
+}
+
+.inbox-div{
+    margin-top: 7px;
+}
+
+ 
+ 
+
+ 

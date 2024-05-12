@@ -1,0 +1,110 @@
+<section>
+    <mat-toolbar color = "primary">
+    <mat-toolbar-row fxLayout = "row">
+       <span>Sign Up</span>
+       <span class = "spacer"></span>
+       <button class = "mat-dialog-close" mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+       </button>
+    </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- main container -->
+<div class="container">
+
+    <!-- card which is holding registration form -->
+     <mat-card class = "myCard">
+ 
+         <!-- defining signing form -->
+     <form [formGroup] = "signInForm" (ngSubmit) = "onSubmit()">
+ 
+         <!-- defining field to upload image -->
+       <div class="mb-3 text-center">
+         <img width="120" height="120" class="margin-top mat-elevation-z1"
+         [src]="url" alt = "profile" />
+     </div> 
+     <!-- <input #inputField hidden type="file" (change)="onFileSelect($event)" /> -->
+     <div class = "select-pic-icon">
+     <mat-icon (click)="inputField.click()" id="icon">add_a_photo</mat-icon>
+     <input #inputField hidden type="file" (change)="onFileSelect($event)" formControlName="profileImage" />
+    </div>
+     <!-- defining field to add full name -->
+     <mat-form-field class = "formField">
+      <input type="text" formControlName = "fullName" name="fullName" matInput placeholder="Your Name">
+      <mat-error *ngIf = "fullName?.errors?.['required']">
+         Name Can't Be Blanked
+       </mat-error>
+     </mat-form-field>
+ 
+     <!-- defining field to add email -->
+      <mat-form-field class = "formField" *ngIf = "showEmailField">
+      <input type="text" formControlName = "email"
+       name = "email" matInput placeholder="Your Email Id"  
+       #emailid (input) = "checkEmail(emailid.value)">
+      <button click-stop-propogation (click) = "sentOtp(emailid.value)" 
+      [class.hide-otp-button] = "hidebutton" mat-button [disabled] = "!email?.valid" 
+      class = "sent-otp-link" matSuffix>OTP</button>
+      <mat-error *ngIf = "email?.errors?.['required']">
+         Email Can't Be Blank
+        </mat-error>
+     </mat-form-field>
+     <div>
+         <mat-error *ngIf = "email?.errors?.['pattern']">
+          Please Provide Your Valid Email Id
+         </mat-error>
+     </div>
+        <mat-form-field appearance = "outline" *ngIf = "showOtpField" class = "otp-input-field">
+            <input type="password" matInput placeholder="Provide Otp"
+             #otp (input) = "verifyOtp(otp.value)">
+        </mat-form-field>
+      <!-- defining field to add contact number    -->
+      <div *ngIf = "openForm">
+     <mat-form-field class = "formField">
+         <input type="number" formControlName = "contactNo" name = "contactNo"
+          matInput placeholder="Your Contact No">
+         <mat-error *ngIf = "contactNo?.errors?.['required']">
+            Contact No Can't Be Blank
+            </mat-error>
+        </mat-form-field>
+        <div>
+         <mat-error *ngIf = "contactNo?.errors?.['pattern']">
+            Please provide Valid Contact Number contains 10 digits starting with 7/8/9
+         </mat-error>
+         </div>
+ 
+      <!-- defining field to add password    -->
+     <mat-form-field class = "formField">
+      <input type="password" matInput formControlName = "password" name = "password" placeholder="Your Password">
+      <mat-error *ngIf = "password?.errors?.['required']">
+         Password Required
+         </mat-error>
+     </mat-form-field>
+     <div>
+         <mat-error *ngIf = "password?.errors?.['pattern']">
+             Password Should Have min 5 letter password, with atlease a symbol a upper and lower case letters and a number 
+         </mat-error>
+         </div>
+ 
+    <!-- defining field to add confirm password -->
+     <mat-form-field class = "formField">
+      <input type="password" matInput formControlName = "confirmPassword" name = "confirmPassword" placeholder="Re-enter Password">
+      <mat-error *ngIf = "confirmPassword?.errors?.['required']">
+         Confirm Password is Required
+     </mat-error>
+     </mat-form-field>
+     <div>
+         <mat-error *ngIf = "signInForm?.errors?.['mustMatch']===true">
+             password and confirm password should match
+         </mat-error>
+         </div>
+        </div>
+      <!-- button to submit and reset sign in form    -->
+     <div class = "text-center">
+      <button mat-raised-button color = "primary" type="submit" [disabled]="!signInForm.valid">Register !!</button>
+      <button mat-raised-button  color = "accent" type="reset" class = "resetBtn">Reset</button>
+     </div>
+ </form>
+ </mat-card>
+ </div>
+ 
+
+</section>

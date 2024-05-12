@@ -1,0 +1,71 @@
+/* styling card holding login form */
+.myCard{
+    width: 440px;
+    padding: 20px;
+    text-align: center;
+    margin:120px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px 5px rgb(196, 184, 184);  
+}
+
+:host.XSmall .myCard{
+  width: 90%;
+  height: 80%;
+  margin: 120px auto 30px auto;
+  padding: auto;
+  box-shadow: none;
+}
+
+:host.XSmall .formField{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:host.small .myCard{
+  width: 90%;
+  height: 80%;
+  margin: 120px auto 30px auto;
+  padding: auto;
+  box-shadow: none;
+}
+
+:host.small .formField{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* setting width for form field */
+.formField{
+    width: 400px;
+}
+
+/* styling reset button */
+.resetBtn{
+    margin-left: 10px;
+}
+
+.text-center button{
+  z-index: 0;
+}
+
+/* styling heading */
+.h1{
+    font-weight: 400;
+    color:rgb(98, 98, 236);
+}
+
+/* styling div having forgot functionlity */
+.h3-div{
+    margin-top: 20px;
+    text-align: right;
+}
+
+.h3-div h3 a{
+    cursor: pointer;
+    color:blueviolet;
+    border-bottom:1px solid blueviolet;
+}
+
+ 
